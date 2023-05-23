@@ -47,6 +47,14 @@ function App() {
     setContacts(contactsSortedByPopularity);
   };
 
+  const deleteContact = (index) => {
+    console.log("Borrando contacto"); // Funciona
+    const clonedContacts = JSON.parse(JSON.stringify(allContacts));
+    clonedContacts.splice(index, 1);
+
+    setContacts(clonedContacts);
+  };
+
   return (
     <div className="App">
       <div>
@@ -70,6 +78,8 @@ function App() {
             Won Oscar: {contact.wonOscar ? "🏆" : "❌"}
             <br />
             Won Emmy: {contact.wonEmmy ? "👑" : "❌"}
+            <br />
+            <button onClick={deleteContact}>Eliminar</button>
           </p>
         );
       })}
