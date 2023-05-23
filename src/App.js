@@ -11,8 +11,6 @@ function App() {
 
 
 
-
-
   return (
     <div className="App">
       <h1>Contact List</h1>
@@ -25,7 +23,14 @@ function App() {
             Name: {contact.name}
             <br />
             Popularity: {contact.popularity}
-          </p>)
+            <br />
+            Won Oscar: {contact.wonOscar ? "🏆" : "❌" }
+            <br />
+            Won Emmy: {contact.wonEmmy ? "👑" : "❌" }
+          </p>
+          
+        
+          )
           
         })}
       </ul>
