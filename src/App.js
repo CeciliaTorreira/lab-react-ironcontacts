@@ -17,12 +17,32 @@ console.log("Añadiendo contacto") // Funciona
   )
 }
 
+const sortContactsByName = () =>{
+ console.log("orden alfabético");
+
+const contactsSortedByName = JSON.parse(JSON.stringify(allContacts))
+
+contactsSortedByName.sort((contact2, contact1) =>{
+  if(contact2.name > contact1.name){
+    return 1
+   }
+   else if ((contact2.name < contact1.name))
+   {
+    return -1
+   }
+   else {return 0}
+})
+  setContacts(contactsSortedByName)
+
+}
+
 
   return (
     <div className="App">
       <div>
         <button onClick={addRandomContact}>Add random contact</button>
-      
+      <button onClick={sortContactsByName}>Sort by Name</button>
+      {/* //<button onClick={sortContactsByPopularity}></button> */}
         <br />
       </div>
       <h1>Contact List</h1>
